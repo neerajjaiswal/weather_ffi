@@ -1,6 +1,7 @@
 # weather_ffi
 
 A starter project for building WeatherFFI, an app that uses FFI to obtain a fake weather forecast from native code.
+https://www.raywenderlich.com/21512310-calling-native-libraries-in-flutter-with-dart-ffi
 
 ## Getting Started
 

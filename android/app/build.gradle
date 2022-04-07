@@ -49,6 +49,11 @@ android {
         }
     }
     // TODO: Add externalNativeBuild here
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
 }
 
 flutter {

@@ -36,6 +36,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 import 'package:flutter/material.dart';
+import 'ffi_bridge.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -67,6 +69,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final FFIBridge _ffiBridge = FFIBridge();
+
 
   void _show(message) {
     showDialog(
@@ -87,28 +91,31 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
                 child: const Text('Temperature'),
                 onPressed: () async {
-                  // TODO: Add code to invoke newly created temperature method
-                  throw UnimplementedError();
+                  _show(_ffiBridge.getTemperature());
+                  // throw UnimplementedError();
                 }),
             ElevatedButton(
                 child: const Text('Today\'s forecast'),
                 onPressed: () {
                   // TODO: Add code to invoke newly created forecast method
-                  throw UnimplementedError();
+                  // throw UnimplementedError();
+                  _show(_ffiBridge.getForecast());
                 }),
             ElevatedButton(
                 child: const Text('3-day forecast (Fahrenheit)'),
                 onPressed: () {
                   // TODO: Add code to invoke newly created 3-day forecast
                   //  (Fahrenheit) method
-                  throw UnimplementedError();
+                  // throw UnimplementedError();
+                  _show(_ffiBridge.getThreeDayForecast(false));
                 }),
             ElevatedButton(
                 child: const Text('3-day forecast (Celsius)'),
                 onPressed: () {
                   // TODO: Add code to invoke newly created 3-day forecast
                   //  (Celsius) method
-                  throw UnimplementedError();
+                  // throw UnimplementedError();
+                  _show(_ffiBridge.getThreeDayForecast(true));
                 }),
           ],
         ),
